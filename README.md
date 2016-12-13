@@ -14,7 +14,7 @@ First, install Paket and download the Nuget dependencies
 
 # Run the Script
 
-For now, it just lists populare files by month.
+For now, it just lists popular files by month.
 
 The script has a `DEFAULT_FILENAME` that should point to your 
 Activity Log output file (it would be in your Dropbox folder with a path like e.g.
