@@ -14,8 +14,7 @@ First, install Paket and download the Nuget dependencies
 
 # Run the Script
 
-For now, it just lists popular files by month.
-
+## List Popular Files by Month
 The script has a `DEFAULT_FILENAME` that should point to your 
 Activity Log output file (it would be in your Dropbox folder with a path like e.g.
 `Dropbox Business reports/2016-12-13 full log.csv`.
@@ -29,5 +28,11 @@ Or, with an explicit path to the Activity Log:
 
     fsharpi analyze.fsx "path-to-Dropbox/Dropbox Business reports/2016-12-13 full log.csv"
 
+
+## Show a Calendar of Edit Activity
+You can also show a calendar of the edit activity. Just invoke
+`editsbyday.fsx` with a path to the Activity Log file.
+
+    fsharpi editsbyday.fsx  "path-to-Dropbox/Dropbox Business reports/2016-12-13 full log.csv"
 
 
