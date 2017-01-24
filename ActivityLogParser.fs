@@ -3,8 +3,14 @@ module ActivityLogParser
 open System
 open FSharp.Data
 
-type ActivityLogCsv = CsvProvider<"activity-log-template.csv">
-type FileDescriptorJson = JsonProvider<"activity-log-file-description-template.json">
+
+[<Literal>]
+let  LogTemplate = __SOURCE_DIRECTORY__ + "/" + "activity-log-template.csv"
+[<Literal>]
+let  DescriptionTemplate = __SOURCE_DIRECTORY__ + "/" + "activity-log-file-description-template.json"
+
+type ActivityLogCsv = CsvProvider<LogTemplate>
+type FileDescriptorJson = JsonProvider<DescriptionTemplate>
 
 type Activity =
     | FileAdded of path : string 
