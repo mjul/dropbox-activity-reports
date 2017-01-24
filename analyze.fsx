@@ -7,7 +7,6 @@ open FSharp.Data
 // Set this to something that fits or specify the file on the command line
 let DEFAULT_FILENAME = "2016-12-13 full logfile.csv"
 
-
 type ActivityLogCsv = CsvProvider<"activity-log-template.csv">
 type FileDescriptorJson = JsonProvider<"activity-log-file-description-template.json">
 
@@ -48,6 +47,14 @@ let parseRows rows =
     |> Seq.map parseRow
     |> Seq.choose id
 
+
+let parseActivityLog (fname:string) =
+    let rows = ActivityLogCsv.Load(fname).Rows
+    parseRows rows
+
+
+(* Create some reports *)
+
 let firstDayOfMonth (d:DateTime) =
     new DateTime(d.Year, d.Month, 1)
 
@@ -65,13 +72,10 @@ let fileEditsByMonth (events : Event seq) =
     |> Seq.map (fun ((month, path), cnt) -> (month,path,cnt))
 
 
-let printMostEditedFilesByMonth (fname:string) =
-    let rows = ActivityLogCsv.Load(fname).Rows
-    let parsed = parseRows rows
-    for date, path, cnt in (fileEditsByMonth parsed) do
+let printMostEditedFilesByMonth events =
+    for date, path, cnt in (fileEditsByMonth events) do
         if cnt >= 25 then
             printfn "%s\t%s\t%d" (date.ToShortDateString()) path cnt
-    
 
 let filename =
     match fsi.CommandLineArgs with
@@ -83,4 +87,5 @@ let filename =
 if not (System.IO.File.Exists(filename)) then
     failwithf "Activity log not found: %s" filename
 else
-    printMostEditedFilesByMonth filename
+    let events = parseActivityLog filename
+    printMostEditedFilesByMonth events
