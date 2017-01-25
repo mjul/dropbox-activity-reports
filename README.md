@@ -35,4 +35,8 @@ You can also show a calendar of the edit activity. Just invoke
 
     fsharpi editsbyday.fsx  "path-to-Dropbox/Dropbox Business reports/2016-12-13 full log.csv"
 
+This uses the great FS Lab charting features. 
+The calendar will open in the default browser.
+![Screenshot](docs/editsbyday.png "Activity calendar example.")
+
 
