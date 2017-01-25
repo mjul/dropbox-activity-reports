@@ -52,7 +52,7 @@ let parseRows rows =
 
 (*
    Dropbox sometimes changes the format so it is good to check that
-   the parser and the the file match.
+   the parser and the file match.
 *)
 let validateFileFormat fname =
     // We can get the expected headers in the file by saving a file with no
