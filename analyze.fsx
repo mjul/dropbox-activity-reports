@@ -39,8 +39,8 @@ let filename =
     | _ ->
         DEFAULT_FILENAME
 
-if not (System.IO.File.Exists(filename)) then
-    failwithf "Activity log not found: %s" filename
-else
-    let events = parseActivityLog filename
+match parseActivityLog filename with
+| Some error, _ ->
+    printfn "** ERROR: %s" error
+| None, events ->
     printMostEditedFilesByMonth events

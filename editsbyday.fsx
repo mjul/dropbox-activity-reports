@@ -39,9 +39,10 @@ let getArgs () =
 
 let filename = getArgs ()
 
-if (not (System.IO.File.Exists(filename))) then
-    failwithf "Activity log file not found: %s" filename
-else
-    let events = parseActivityLog filename
+
+match parseActivityLog filename with
+| Some error, _ ->
+    printfn "** ERROR: %s" error
+| None, events ->
     let chart = chartNumberOfEditsByDay events
     chart.Show()
