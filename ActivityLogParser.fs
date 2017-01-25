@@ -1,16 +1,14 @@
-module ActivityLogParser
+﻿module ActivityLogParser
 
 open System
 open FSharp.Data
 
 
 [<Literal>]
-let  LogTemplate = __SOURCE_DIRECTORY__ + "/" + "activity-log-template.csv"
-[<Literal>]
-let  DescriptionTemplate = __SOURCE_DIRECTORY__ + "/" + "activity-log-file-description-template.json"
+let  ActivityLogTemplateFile = __SOURCE_DIRECTORY__ + "/" + "activity-log-template.csv"
 
-type ActivityLogCsv = CsvProvider<LogTemplate>
-type FileDescriptorJson = JsonProvider<DescriptionTemplate>
+type ActivityLogCsv = CsvProvider<ActivityLogTemplateFile>
+type FileDescriptorJson = JsonProvider<"""{"path": "/Articles/Interesting article.pdf", "is_dir": false, "file_id": "aGTP3TBWMKARRRAAADAALF", "host_id": 1234567890}""">
 
 type Activity =
     | FileAdded of path : string 
@@ -20,12 +18,13 @@ type Event = {Time: DateTime; Activity: Activity; User: User}
     
 
 let parseFileRow (row:ActivityLogCsv.Row) =
-    let info = FileDescriptorJson.Parse(row.Info)
+    let parseInfo () =
+        FileDescriptorJson.Parse(row.Info)
     match row.``Event type`` with
     | "Edited files" ->
-        Some (FileEdited info.Path)
+        Some (FileEdited (parseInfo().Path))
     | "Added files" ->
-        Some (FileAdded info.Path)
+        Some (FileAdded (parseInfo()).Path)
     | _ ->
         None
         
