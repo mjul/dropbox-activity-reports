@@ -1,6 +1,6 @@
-﻿Time,Event category,Event type,IP address,Country,Name,Email,Info
-2016-12-13T10:27:04+00:00,Admin actions,Created a team activity report,1.2.3.4,DK,Mr Foo,foo@domain.com,"{""from_date"": ""2016-05-01"", ""to_date"": ""2016-12-13""}"
-2016-12-13T10:03:46+00:00,Logins,Web session IP changed,1.2.3.4,DK,Mr Foo,foo@domain.com,"{""display_name"": ""Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.2.11 (KHTML, like Gecko) Version/7.0.1 Safari/601.2.11""}"
-2016-12-13T08:43:38+00:00,Devices,Desktop client IP changed,1.2.3.10,DK,Mr Bar,bar@domain.com,"{""host_id"": 1234567890, ""display_name"": ""Mr Bar Laptop"", ""uniq_id"": ""AABISAtE3sew9DxSyNzl1R7lfwHV-20qxLCr0xWWSGMPSQ""}"
-2016-08-08T06:50:54+00:00,Files,Added files,1.2.3.4,DK,Mr Foo,foo@domain.com,"{""path"": ""/Articles/Interesting article.pdf"", ""is_dir"": false, ""file_id"": ""aGTP3TBWMKARRRAAADAALF"", ""host_id"": 1234567890}"
-2016-08-02T07:23:03+00:00,Files,Edited files,1.2.3.10,DK,Mr Bar,bar@domain.com,"{""path"": ""/Sales/Budget.xlsx"", ""is_dir"": false, ""file_id"": ""XlRemFmh-nATREAAABVCAQ"", ""host_id"": 1234567890}"
+﻿Time,Event category,Event type,IP address,Country,Town or city,Region,Name,Email,Info
+2016-12-13T10:27:04+00:00,Admin actions,Created a team activity report,1.2.3.4,DK,Copenhagen,Hovedstaden,Mr Foo,foo@domain.com,"{""from_date"": ""2016-05-01"", ""to_date"": ""2016-12-13""}"
+2016-12-13T10:03:46+00:00,Logins,Web session IP changed,1.2.3.4,DK,Copenhagen,Hovedstaden,Mr Foo,foo@domain.com,"{""display_name"": ""Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.2.11 (KHTML, like Gecko) Version/7.0.1 Safari/601.2.11""}"
+2016-12-13T08:43:38+00:00,Devices,Desktop client IP changed,1.2.3.10,DK,Copenhagen,Hovedstaden,Mr Bar,bar@domain.com,"{""host_id"": 1234567890, ""display_name"": ""Mr Bar Laptop"", ""uniq_id"": ""AABISAtE3sew9DxSyNzl1R7lfwHV-20qxLCr0xWWSGMPSQ""}"
+2016-08-08T06:50:54+00:00,Files,Added files,1.2.3.4,DK,Copenhagen,Hovedstaden,Mr Foo,foo@domain.com,"{""path"": ""/Articles/Interesting article.pdf"", ""is_dir"": false, ""file_id"": ""aGTP3TBWMKARRRAAADAALF"", ""host_id"": 1234567890}"
+2016-08-02T07:23:03+00:00,Files,Edited files,1.2.3.10,DK,Copenhagen,Hovedstaden,Mr Bar,bar@domain.com,"{""path"": ""/Sales/Budget.xlsx"", ""is_dir"": false, ""file_id"": ""XlRemFmh-nATREAAABVCAQ"", ""host_id"": 1234567890}"
