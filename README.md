@@ -2,7 +2,14 @@
 Analyze Dropbox activity reports (F#).
 
 This demonstrates how to use the CSV Type Provider and the JSON Type
-Provider in FSharp.Data.
+Provider in FSharp.Data.  It also uses the data science tooling
+in [FsLab](http://fslab.org) to perform time-series analysis and
+charting.
+
+## Activity Calendar
+
+![Screenshot](docs/editsbyday.png "Activity calendar example.")
+
 
 # Installing on Mac with the Mono .NET Toolchain
 
@@ -37,6 +44,5 @@ You can also show a calendar of the edit activity. Just invoke
 
 This uses the great FS Lab charting features. 
 The calendar will open in the default browser.
-![Screenshot](docs/editsbyday.png "Activity calendar example.")
 
 
