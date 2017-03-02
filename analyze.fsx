@@ -7,6 +7,7 @@ open System
 
 // Set this to something that fits or specify the file on the command line
 let DEFAULT_FILENAME = "2016-12-13 full logfile.csv"
+let MIN_EDITS = 25
 
 (* Create some reports *)
 
@@ -27,9 +28,9 @@ let fileEditsByMonth (events : Event seq) =
     |> Seq.map (fun ((month, path), cnt) -> (month,path,cnt))
 
 
-let printMostEditedFilesByMonth events =
+let printMostEditedFilesByMonth minEdits events =
     for date, path, cnt in (fileEditsByMonth events) do
-        if cnt >= 25 then
+        if cnt >= minEdits then
             printfn "%s\t%s\t%d" (date.ToShortDateString()) path cnt
 
 let filename =
@@ -43,4 +44,4 @@ match parseActivityLog filename with
 | Some error, _ ->
     printfn "** ERROR: %s" error
 | None, events ->
-    printMostEditedFilesByMonth events
+    printMostEditedFilesByMonth MIN_EDITS events
